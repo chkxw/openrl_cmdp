@@ -99,23 +99,23 @@ def get_extra_requires() -> dict:
 
 def get_version() -> str:
     # https://packaging.python.org/guides/single-sourcing-package-version/
-    init = open(os.path.join("openrl", "__init__.py"), "r").read().split()
+    init = open(os.path.join("openrl_cmdp", "__init__.py"), "r").read().split()
     return init[init.index("__VERSION__") + 2][1:-1]
 
 
 setup(
-    name="openrl",
+    name="openrl_cmdp",
     version=get_version(),
-    description="unified reinforcement learning framework",
+    description="CMDP-tailored reinforcement learning framework based on OpenRL",
     long_description=open("README.md", encoding="utf8").read(),
     long_description_content_type="text/markdown",
     author="openrl contributors",
     author_email="huangsy1314@163.com",
-    url="https://github.com/OpenRL-Lab/openrl",
+    url="https://github.com/chkxw/openrl_cmdp",
     packages=setuptools.find_packages(),
-    entry_points={"console_scripts": ["openrl=openrl.cli.cli:run"]},
+    entry_points={"console_scripts": ["openrl_cmdp=openrl_cmdp.cli.cli:run"]},
     project_urls={
-        "Code": "https://github.com/OpenRL-Lab/openrl",
+        "Code": "https://github.com/chkxw/openrl_cmdp",
         "Documentation": "https://openrl-docs.readthedocs.io/zh/latest/",
     },
     classifiers=[
